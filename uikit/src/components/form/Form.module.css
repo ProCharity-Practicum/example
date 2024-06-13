@@ -1,0 +1,26 @@
+:root {
+    --labelSize: 5rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    &.column label {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    &.row label {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+
+        > span:first-child {
+            width: var(--labelSize);
+        }
+    }
+}

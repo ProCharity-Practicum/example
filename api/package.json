@@ -1,0 +1,9 @@
+{
+  "name": "api",
+  "packageManager": "yarn@4.2.2",
+  "devDependencies": {
+    "jsonwebtoken": "^9.0.2",
+    "moleculer": "^0.14.33",
+    "moleculer-web": "^0.10.7"
+  }
+}

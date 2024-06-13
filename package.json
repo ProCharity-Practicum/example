@@ -1,0 +1,23 @@
+{
+  "name": "prototype",
+  "packageManager": "yarn@4.2.2",
+  "private": true,
+  "main": "dist/uikit.js",
+  "workspaces": [
+    "core",
+    "common",
+    "api",
+    "uikit",
+    "services/*"
+  ],
+  "scripts": {
+    "dev": "cross-env DB_PATH=../.db yarn workspace core dev",
+    "build": " yarn workspaces foreach -Rpt --from '{uikit,auth-ui,main,profile-ui,register-ui}' run build",
+    "storybook": "yarn workspace uikit storybook",
+    "server": "docker-compose up -d",
+    "server:rebuild": "docker-compose up -d --build"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3"
+  }
+}

@@ -1,0 +1,13 @@
+services:
+  server:
+    build:
+      context: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./services/main/dist:/app/frontend
+      - ./services/auth-ui/dist:/app/frontend/auth
+      - ./services/register-ui/dist:/app/frontend/register
+      - ./services/profile-ui/dist:/app/frontend/profile
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

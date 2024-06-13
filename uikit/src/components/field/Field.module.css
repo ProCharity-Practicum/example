@@ -1,0 +1,10 @@
+:root {
+    --hintErrorColor: red;
+}
+
+.hint {
+    font-size: 0.8rem;
+    &::before {
+        content: "*";
+    }
+}

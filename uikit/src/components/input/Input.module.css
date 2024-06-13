@@ -1,0 +1,11 @@
+:root {
+    --input-border-color-invalid: red;
+}
+
+.input {
+    border: 1px solid black;
+    padding: 0.25rem;
+    &:invalid {
+        border-color: var(--input-border-color-invalid);
+    }
+}
