@@ -5201,9 +5201,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"common@workspace:common":
+"common@workspace:^, common@workspace:common":
   version: 0.0.0-use.local
   resolution: "common@workspace:common"
+  dependencies:
+    "@types/react": "npm:^18.2.66"
+    "@types/react-dom": "npm:^18.2.22"
+    "@vitejs/plugin-react": "npm:^4.2.1"
+    eslint: "npm:^8.57.0"
+    eslint-plugin-react: "npm:^7.34.1"
+    eslint-plugin-react-hooks: "npm:^4.6.0"
+    eslint-plugin-react-refresh: "npm:^0.4.6"
+    react: "npm:^18.2.0"
+    react-dom: "npm:^18.2.0"
+    vite: "npm:^5.2.0"
   languageName: unknown
   linkType: soft
 
@@ -8552,6 +8563,7 @@ __metadata:
     "@types/react": "npm:^18.2.79"
     "@types/react-dom": "npm:^18.2.25"
     "@vitejs/plugin-react": "npm:^4.2.1"
+    common: "workspace:^"
     compression: "npm:^1.7.4"
     cross-env: "npm:^7.0.3"
     express: "npm:^4.19.2"

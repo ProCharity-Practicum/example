@@ -14,3 +14,5 @@ export { ProfileForm } from "./profile-form/ProfileForm";
 
 export { Api } from "../utils/api";
 export { saveAs } from "../utils/utils";
+
+export { Counter } from "./counter/Counter";

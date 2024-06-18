@@ -1,4 +1,4 @@
-import {useUserContext} from "../hooks/useUserContext.jsx";
+import {useUserContext} from "common";
 
 
 export function Protected({ children, fallback}) {

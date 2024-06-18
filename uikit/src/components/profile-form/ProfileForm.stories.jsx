@@ -8,7 +8,13 @@ export default {
         layout: 'centered'
     },
     args: {
-        onRegister: fn()
+        user: {
+            name: 'John Doe',
+            email: 'test@test.ru',
+            phone: '+7 999 123 45 67',
+            password: ''
+        },
+        onEdit: fn()
     }
 }
 

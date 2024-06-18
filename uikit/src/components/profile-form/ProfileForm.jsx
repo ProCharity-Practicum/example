@@ -4,26 +4,35 @@ import {Button} from "../button/Button.jsx";
 import PropTypes from "prop-types";
 
 
-export function ProfileForm({ onEdit }) {
-    const [state, setState] = useState({
-        name: '',
-        email: '',
-        phone: '',
+export function ProfileForm({ onEdit, user }) {
+    const [changed, setChanged] = useState({
+        name: user.name,
+        email: user.email,
+        phone: user.phone,
         password: ''
     });
     /** @type {MutableRefObject<HTMLFormElement>} */
     const ref = useRef();
 
+    const getPatch = useCallback(() => {
+        return Object.keys(changed).reduce((acc, key) => {
+            if (changed[key] !== user[key]) {
+                acc[key] = changed[key];
+            }
+            return acc;
+        }, {});
+    }, [changed, user]);
+
     const handleSubmit = useCallback(() => {
-        onEdit(state);
-    },[onEdit, state]);
+        onEdit(getPatch());
+    },[onEdit, getPatch]);
 
     const actions = useMemo(() => <Button
         primary={true}
         label="Save"
         type="submit"
-        disabled={!state.email || !state.password || !ref.current?.checkValidity()}
-    />, [state.email, state.password]);
+        disabled={!Object.keys(getPatch()).length || !ref.current?.checkValidity()}
+    />, [getPatch]);
 
     return <Form
         ref={ref}
@@ -48,17 +57,22 @@ export function ProfileForm({ onEdit }) {
             password: {
                 type: 'password',
                 label: 'Password',
-                autoComplete: 'new-password',
-                required: true,
+                autoComplete: 'new-password'
             }
         }}
         onSubmit={handleSubmit}
-        onChange={setState}
-        value={state}
+        onChange={setChanged}
+        value={changed}
         actions={actions}
     />;
 }
 
 ProfileForm.propTypes = {
-    onEdit: PropTypes.func.isRequired
+    onEdit: PropTypes.func.isRequired,
+    user: PropTypes.shape({
+        name: PropTypes.string,
+        email: PropTypes.string,
+        phone: PropTypes.string,
+        password: PropTypes.string
+    })
 };

@@ -1,6 +1,6 @@
 import {AppContainer} from "uikit";
 import './App.css'
-import {UserContextProvider} from "../../contexts/UserContext.jsx";
+import {UserContextProvider} from "common";
 import {CurrentUser} from "../CurrentUser.jsx";
 import {Protected} from "../Protected.jsx";
 

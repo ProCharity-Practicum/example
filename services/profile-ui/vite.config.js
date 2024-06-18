@@ -11,7 +11,11 @@ export default defineConfig({
       remotes: {
         auth: "/auth/assets/auth.js",
       },
-      shared: ['react','react-dom']
+      shared: {
+        'react': { singleton: true },
+        'react-dom': { singleton: true },
+        'common': { singleton: true },
+      }
     })
   ],
   base:'./',

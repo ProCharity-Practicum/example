@@ -13,12 +13,12 @@ export default defineConfig({
       exposes: {
         './CurrentUser': './src/components/CurrentUser.jsx',
         './Protected': './src/components/Protected.jsx',
-        './Hooks': './src/hooks/useUserContext.jsx',
-        './UserContext': './src/contexts/UserContext.jsx',
+        './TestRemoteCounter': './src/components/TestRemoteCounter.jsx',
       },
       shared: {
         'react': { singleton: true },
         'react-dom': { singleton: true },
+        'common': { singleton: true },
       }
     })
   ],

@@ -1,6 +1,6 @@
 import { AppContainer } from "uikit";
+import { UserContextProvider } from "common";
 import { CurrentUser } from "auth/CurrentUser";
-import { UserContextProvider } from "auth/UserContext";
 import {EditProfile} from "./EditProfile.jsx";
 
 function App() {

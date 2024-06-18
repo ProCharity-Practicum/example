@@ -2,7 +2,7 @@ import {Modal, User} from "uikit";
 import {useEffect, useState} from "react";
 import {LocalAuth} from "./LocalAuth.jsx";
 
-import { useUserContext } from "../hooks/useUserContext.jsx";
+import { useUserContext } from "common";
 import api from "../services/AuthApi.js";
 
 export function CurrentUser() {
@@ -15,7 +15,7 @@ export function CurrentUser() {
                 .then(({user}) => setUser(user))
                 .catch(() => {});
         }
-    }, [user]);
+    }, [user, setUser]);
 
     return <>
         <User
